@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block main %}
+<form name = "Add Profile" action = " " class = add_Profile(form), method = "POST">
+  {% include 'flash_msg.html' %}
+  {{form.csrf_token }}
+  <div class = "form_container">
+    <div class = "add_form">
+        {{form.Firstname.label}} </br> {{form.Firstname(class = "form-control", size = 75 )}}</br>
+        {{form.Lastname.label}} </br> {{form.Lastname(class = "form-control", size = 75)}}</br>
+        {{form.Gender.label}} {{form.Gender(class = "form-control")}}</br>
+        {{form.Email.label}} </br> {{form.Email(class = "form-control", size = 75, placeholder = "e.g example@mail.com")}}</br>
+        {{form.Location.label}} </br> {{form.Location(class = "form-control", size = 75)}}</br>
+        {{form.Biography.label}} </br> {{form.Biography(class = "form-control")}}</br>
+    <p><input type = file name = Photo"></p>
+    <p><button type= "Submit" value = "Submit">Submit</button></p>
+    </div>
+   </div>
+ </form>
+{% endblock %}
