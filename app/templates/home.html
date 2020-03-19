@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block main %}
-<form name = "Add Profile" action = " " class = add_Profile(form), method = "POST">
+<form name = "Add Profile" action = "{{url_for('add_user')}}" class = add_Profile(form), method = "POST">
   {% include 'flash_msg.html' %}
   {{form.csrf_token }}
   <div class = "form_container">

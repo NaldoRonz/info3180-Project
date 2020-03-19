@@ -1,8 +1,8 @@
 from . import my_db
 
-class Users(my_db.Model):
+class users(my_db.Model):
 
-	_tablename_ = "User_Profiles"
+	_tablename_ = "user_profiles"
 
 	id = my_db.Column(my_db.Integer,primary_key=True)
 	firstname = my_db.Column(my_db.String(20))
