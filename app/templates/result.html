@@ -3,6 +3,6 @@
 {% block flash %}
     <h2> Form Submission was a success </h2>
     {% include 'flash_msg.html' %}
-    <p>Hello, my name is <strong>{{Firstname + ' ' + Lastname}}</strong> nice to talk to you, my address is <strong>{{Email}}</strong> and i wanted to talk about<strong>{{Gender}}</strong></p>
-    <img src"{{url_for('static',filename="uploads/" + filename) }}>
+    <p> Your name is <strong>{{Firstname + ' ' + Lastname}}</strong>, gender <strong>{{Gender}}</strong>, email address 
+    <strong>{{Email}}</strong>, your loacation is <strong>{{Location}}</strong> and your biography states that <strong>{{Biography}}</strong> </p>
 {% endblock %}

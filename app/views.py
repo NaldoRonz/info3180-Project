@@ -8,22 +8,20 @@ This file creates your application.
 
 from app import app
 from flask import render_template, request, redirect, url_for, flash
-#from werkzeug.utils import secure_filename
+from werkzeug.utils import secure_filename
 from .forms import add_Profile
 from datetime import date
-
+from app import my_db
+from app.models import Users
 
 ###
 # Routing for your application.
 ###
 
-@app.route('/')
-def home():
-    """Render website's home page."""
-    return render_template('home.html')
+# Renders form as home directory.
 
-@app.route('/profile', methods = ["GET", "POST"])
-def profile():
+@app.route('/', methods = ["GET", "POST"])
+def home():
     form = add_Profile()
     if request.method == "POST" and form.validate_on_submit():
         Firstname = form.Firstname.data
@@ -37,12 +35,37 @@ def profile():
         #Photo.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
 
         flash("Successfully Completed")
-        return render_template('result.html', form = form, Firstname = Firstname, Lastname = Lastname, Gender = Gender, Email = Email, Location = Location, Biography = Biography)#filename = filename
+        return render_template('result.html', form = form, Firstname = Firstname, Lastname = Lastname, Gender = Gender, Email = Email, Location = Location, Biography = Biography)
+        #filename = filename
+        
     else:
         flash_errors(form)
-        return render_template('profile.html', form = form)
+        return render_template('home.html', form = form)
 
-# Flash errors from the form if validation fails
+
+@app.route("/add_user", methods = ["POST"])
+def add_user():
+    user = Users(request.form["firstname"], request.form["lastname"])
+    my_db.session.add(user)
+    my_db.sessiom.commit()
+    return redirect(url_for("profiles"))
+
+
+@app.route("/users")
+def users():
+    users = Users.query.all()
+
+    return render_template("")
+
+
+
+@app.route('/profile')
+def profile():
+    """Render website's home page."""
+    return render_template('profile.html')
+
+
+
 def flash_errors(form):
     for field, errors in form.errors.items():
         for error in errors:

@@ -9,10 +9,10 @@ from wtforms import ValidationError
 #images = UploadSet("images", IMAGES)
 
 class add_Profile(FlaskForm):
-    Firstname = StringField("Firstname", validators = [Required(), Length(min=2, max=20), Regexp("[A-Z][a-z]*")])
-    Lastname = StringField("Lastname", validators = [Required(),  Length(min=2, max=20), Regexp("[A-Z]+([ '-][a-zA-Z]+)*")])
-    Gender = SelectField("Gender", choices = [("N/A","---"),("M","Male"),("F","Female"), ("O","Other")], validators = [Required()])
-    Email = StringField("Email", validators = [Required(), Email()])
-    Location = StringField("Location", validators = [Required()])
-    Biography = TextAreaField("Biography", validators = [Required()])
+    Firstname = StringField("Firstname", validators = [Required(), Length(min=2, max=20), Regexp("^[A-Za-z]+$")])
+    Lastname = StringField("Lastname", validators = [Required(),  Length(min=2, max=20), Regexp("^[A-Za-z]+$")])
+    Gender = SelectField("Gender", choices = [("M","Male"),("F","Female"), ("O","Other")])
+    Email = StringField("Email", validators = [Required(), Email(), Length(max =35)])
+    Location = StringField("Location", validators = [Required(), Regexp("^[/s A-Za-z0-9 /s]+$"), Length(max =200)])
+    Biography = TextAreaField("Biography", validators = [Required(), Length(max =1000)])
     #Browse = FileField("images", validators =[FileRequired(), FileAllowed(images, "Please only upload image files only!!!")])
