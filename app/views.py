@@ -12,7 +12,7 @@ from werkzeug.utils import secure_filename
 from .forms import add_Profile
 from datetime import date
 from app import my_db
-from app.models import users
+from app.models import my_users
 
 ###
 # Routing for your application.
@@ -45,7 +45,7 @@ def home():
 
 @app.route("/add_user", methods = ["POST"])
 def add_user():
-    user = users(request.form["Firstname"], request.form["Lastname"], request.form["Gender"], request.form["Email"], request.form["Location"], request.form["Biography"])
+    user = my_users(request.form["Firstname"], request.form["Lastname"], request.form["Gender"], request.form["Email"], request.form["Location"], request.form["Biography"])
     my_db.session.add(user)
     my_db.session.commit()
     return redirect(url_for("profiles"))
@@ -53,7 +53,7 @@ def add_user():
 
 @app.route("/users")
 def users():
-    users = Users.query.all()
+    users = my_users.query.all()
 
     return render_template("")
 
