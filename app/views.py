@@ -30,13 +30,12 @@ def home():
         Email = form.Email.data
         Location = form.Location.data
         Biography = form.Biography.data
-        #Photo = form.Browse.data
-        #filename = secure_filename(Photo.filename)
-        #Photo.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
+        Photo = form.Photo.data
+        filename = secure_filename(Photo.filename)
+        Photo.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
 
         flash("Successfully Completed")
-        return render_template('result.html', form = form, Firstname = Firstname, Lastname = Lastname, Gender = Gender, Email = Email, Location = Location, Biography = Biography)
-        #filename = filename
+        return render_template('result.html', form = form, Firstname = Firstname, Lastname = Lastname, Gender = Gender, Email = Email, Location = Location, Biography = Biography, filename = filename)
         
     else:
         flash_errors(form)
@@ -45,7 +44,7 @@ def home():
 
 @app.route("/add_user", methods = ["POST"])
 def add_user():
-    user = my_users(request.form["Firstname"], request.form["Lastname"], request.form["Gender"], request.form["Email"], request.form["Location"], request.form["Biography"])
+    user = my_users(request.form["Firstname"], request.form["Lastname"], request.form["Gender"], request.form["Email"], request.form["Location"], request.form["Biography"], request.form["Photo"])
     my_db.session.add(user)
     my_db.session.commit()
     return redirect(url_for("profiles"))
