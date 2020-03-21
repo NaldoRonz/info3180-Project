@@ -16,7 +16,6 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 #For File Upload
 UPLOAD_FOLDER = "./app/static/uploads"
-ALLOWED_EXTENSIONS = {"png", "jpeg", "gif"}
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 app.config.from_object(__name__)

@@ -13,8 +13,8 @@ class add_Profile(FlaskForm):
     Email = StringField("Email", validators = [Required(), Email(), Length(max =35)])
     Location = StringField("Location", validators = [Required(), Regexp("^[/s A-Za-z0-9 /s]+$"), Length(max =200)])
     Biography = TextAreaField("Biography", validators = [Required(), Length(max =1000)])
-    Photo = FileField("Photo", validators =[FileRequired(), FileAllowed(['jpg', 'png', 'jpeg'], "Please only upload image files only!!!")]) 
+    Photo = FileField("Photo", validators =[FileRequired(),FileAllowed(['jpg', 'png', 'jpeg'], "Please only upload image files only!!!")]) 
 
-#images = UploadSet("images", IMAGES)
+#Photo = UploadSet("Photo", IMAGES)
 
 

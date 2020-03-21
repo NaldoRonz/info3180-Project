@@ -5,9 +5,9 @@ Jinja2 Documentation:    http://jinja.pocoo.org/2/documentation/
 Werkzeug Documentation:  http://werkzeug.pocoo.org/documentation/
 This file creates your application.
 """
-
+import os
 from app import app
-from flask import render_template, request, redirect, url_for, flash
+from flask import render_template, request, redirect, url_for, flash, send_from_directory
 from werkzeug.utils import secure_filename
 from .forms import add_Profile
 from datetime import date
@@ -30,32 +30,23 @@ def home():
         Email = form.Email.data
         Location = form.Location.data
         Biography = form.Biography.data
-        Photo = form.Photo.data
+        Photo = form.Photo.data 
         filename = secure_filename(Photo.filename)
         Photo.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
+        user = my_users(request.form["Firstname"], request.form["Lastname"], request.form["Gender"], request.form["Email"], request.form["Location"], request.form["Biography"], filename)
+        send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+        my_db.session.add(user)
+        my_db.session.commit()            
+        return render_template('result.html', form = form, Firstname = Firstname, Lastname = Lastname, Gender = Gender, Email = Email, Location = Location, Biography = Biography)
 
-        flash("Successfully Completed")
-        return render_template('result.html', form = form, Firstname = Firstname, Lastname = Lastname, Gender = Gender, Email = Email, Location = Location, Biography = Biography, filename = filename)
-        
     else:
         flash_errors(form)
         return render_template('home.html', form = form)
 
 
-@app.route("/add_user", methods = ["POST"])
-def add_user():
-    user = my_users(request.form["Firstname"], request.form["Lastname"], request.form["Gender"], request.form["Email"], request.form["Location"], request.form["Biography"], request.form["Photo"])
-    my_db.session.add(user)
-    my_db.session.commit()
-    return redirect(url_for("profiles"))
-
-
-@app.route("/users")
 def users():
     users = my_users.query.all()
-
     return render_template("")
-
 
 
 @app.route('/profile')
