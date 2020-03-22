@@ -17,6 +17,7 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 #For File Upload
 UPLOAD_FOLDER = "./app/static/uploads"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
+app.config["MAX_CONTENT_LENGTH"] = 10*1024*1024
 
 app.config.from_object(__name__)
 

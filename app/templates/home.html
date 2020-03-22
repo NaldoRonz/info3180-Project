@@ -5,8 +5,6 @@
   {% include 'flash_msg.html' %}
   {{form.csrf_token}}
   <div class = "form_container">
-    <fieldset class = "add_form">
-      <legend class ="border-bottom mb-4">Add User</legend>
       <div class = "add_form">
         {{form.Firstname.label}} </br> {{form.Firstname(class = "form-control", size = 75 )}}</br>
         {{form.Lastname.label}} </br> {{form.Lastname(class = "form-control", size = 75)}}</br>
@@ -17,7 +15,6 @@
         {{form.Photo(class = "form-control")}} </br>
         <p><button type= "Submit" value = "Submit" class = "btn btn-primary">Add User</button></p>
       </div>
-    </fieldset>
   </div>
 </form>
 {% endblock %}
