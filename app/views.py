@@ -7,7 +7,7 @@ This file creates your application.
 """
 import os
 from app import app
-from flask import render_template, request, redirect, url_for, flash, send_from_directory
+from flask import render_template, request, redirect, url_for, flash
 from werkzeug.utils import secure_filename
 from .forms import add_Profile
 from datetime import date
@@ -34,7 +34,6 @@ def home():
         filename = secure_filename(Photo.filename)
         Photo.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
         user = my_users(request.form["Firstname"], request.form["Lastname"], request.form["Gender"], request.form["Email"], request.form["Location"], request.form["Biography"], filename)
-        send_from_directory(app.config['UPLOAD_FOLDER'], filename)
         my_db.session.add(user)
         my_db.session.commit()            
         return render_template('result.html', form = form, Firstname = Firstname, Lastname = Lastname, Gender = Gender, Email = Email, Location = Location, Biography = Biography)
@@ -44,9 +43,10 @@ def home():
         return render_template('home.html', form = form)
 
 
+@app.route('/profiles')
 def users():
     users = my_users.query.all()
-    return render_template("")
+    return render_template("profiles_user.html", users = users)
 
 
 @app.route('/profile')

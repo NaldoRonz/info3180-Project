@@ -72,6 +72,14 @@ body {
     padding-top: 5rem;
 }
 
+
+.upperContainerUsers{
+  background-color: white;
+  height: auto;
+  width: auto;
+  padding-left: 20%;
+}
+
 .upperContainer{
   background-color: white;
   height: 301px;
@@ -116,6 +124,34 @@ body {
   height: 100px;
   width: 50%;
 }
+
+
+.viewBoxUsers{
+  background-color: #B0E0E6 /*Powder Blue*/;
+  height: 200px;
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.viewBoxUsers2{
+  height: 200px;
+  width: 200px;
+}
+
+
+.viewBoxUsers3{
+  height: 200px;
+  width: 200px;
+}
+
+
+.viewBoxUsers4{
+  height: 200px;
+  width: 200px;
+}
+
 
  h1.name{
   font-family: Arial, Helvetica, sans-serif;

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block main %}
-<div class = "upperContainer">
+<!--<div class = "upperContainer">
   <div class ="viewBox1">
     <img src = "{{url_for('static', filename = 'profile_pic.webp')}}" class = "profile_img">
     <h1 class = "name">{{ my_name }}</h1>
@@ -30,12 +30,34 @@
       <div class ="viewBox22">
         <input type="button" class="button" value="Follow">
         </div>
+    </div>-->
+
+   
+    <!--<img src = "{{url_for('static', filename = 'static/uploads ')}}" class = "profile_img">-->
+<div class = "upperContainerUsers">
+  {% if users %}
+    {% for my_users in users %}
+    <div class = "viewBoxUsers">
+      <div class = "viewBoxUsers2">
+
+      </div>
+      <div class = "viewBoxUsers3">
+        {{my_users.firstname}}
+        {{my_users.lastname}}
+        {{my_users.gender}}
+        {{my_users.location}}
+      </div>
+      <div class = "viewBoxUsers4">
+      </div>
     </div>
+  </br>
+    {% endfor %}
+    {% else %}
+    <p>There are currently no users</p>
+    {% endif %}
+</div>
 {% endblock%}
 
 {% block css %}
-   <link rel = "stylesheet" href = "{{ url_for ('static', filename = 'css/app.css')}}" />
 
-   <script src = "/scripts/jquery.min.js"></script>
-   <script src = "/bootstrap/js/bootstrap.min.js"></script>
 {% endblock%}
