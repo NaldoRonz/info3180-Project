@@ -7,6 +7,7 @@
     {% for my_users in users %}
     <div class = "viewBoxUsers">
       <div class = "viewBoxUsers2">
+        <img src ="{{url_for('static', filename ='uploads/' + my_users.filename)}}" class = "profile_user_pic">
       </div>
       <div class = "viewBoxUsers3">
         <div class = "nameBoxUsers">

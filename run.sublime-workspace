@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"tr",
+				"tr\tTag"
+			],
+			[
 				"Users",
 				"Users"
 			]
@@ -12,37 +16,20 @@
 	"buffers":
 	[
 		{
-			"file": "app/views.py",
+			"file": "app/templates/profiles_user.html",
 			"settings":
 			{
-				"buffer_size": 4574,
+				"buffer_size": 1127,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/forms.py",
+			"file": "app/static/css/app.css",
 			"settings":
 			{
-				"buffer_size": 1145,
+				"buffer_size": 4061,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/templates/home.html",
-			"settings":
-			{
-				"buffer_size": 1020,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/__init__.py",
-			"settings":
-			{
-				"buffer_size": 776,
 				"line_ending": "Windows"
 			}
 		}
@@ -79,13 +66,16 @@
 	},
 	"file_history":
 	[
-		"/C/Users/user/info3180-Project1/app/templates/home.html",
-		"/C/Users/user/info3180-Project1/app/forms.py",
-		"/C/Users/user/info3180-Project1/app/models.py",
-		"/C/Users/user/info3180-Project1/app/__init__.py",
 		"/C/Users/user/info3180-Project1/app/views.py",
-		"/C/Users/user/info3180-Project1/flask-migrate.py",
+		"/C/Users/user/info3180-Project1/app/models.py",
+		"/C/Users/user/info3180-Project1/app/templates/home.html",
+		"/C/Users/user/info3180-Project1/app/static/css/app.css",
+		"/C/Users/user/info3180-Project1/app/forms.py",
+		"/C/Users/user/info3180-Project1/app/templates/profiles_user.html",
+		"/C/Users/user/info3180-Project1/app/templates/header.html",
+		"/C/Users/user/info3180-Project1/app/__init__.py",
 		"/C/Users/user/info3180-Project1/app/templates/result.html",
+		"/C/Users/user/info3180-Project1/flask-migrate.py",
 		"/C/Users/user/info3180-Project1/run.py",
 		"/C/Users/user/info3180-Project1/app/templates/profile.html",
 		"/C/Users/user/info3180-Project1/app/templates/base.html"
@@ -106,6 +96,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"profile",
+			"add",
+			"add_profile",
+			"add_profilr",
 			"jpg",
 			"from"
 		],
@@ -130,77 +124,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "app/views.py",
+					"file": "app/templates/profiles_user.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4574,
+						"buffer_size": 1127,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1468,
-								1468
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 56.0,
-						"translation.y": 576.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/forms.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1145,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1145,
-								1145
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/templates/home.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1020,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								138,
-								138
+								309,
+								309
 							]
 						],
 						"settings":
@@ -210,39 +146,47 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 47.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "app/__init__.py",
+					"buffer": 1,
+					"file": "app/static/css/app.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 776,
+						"buffer_size": 4061,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								597,
-								579
+								4035,
+								4035
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 4227.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
+				},
+				{
+					"file": "/C/Users/user/Downloads/medical-4934010_1920.jpg",
+					"semi_transient": false,
+					"stack_index": 0,
+					"type": "image"
 				}
 			]
 		}

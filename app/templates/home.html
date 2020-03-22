@@ -4,6 +4,9 @@
 <form  action = "" class = add_Profile(form) enctype="multipart/form-data" method = "POST">
   {% include 'flash_msg.html' %}
   {{form.csrf_token}}
+  <div class = "form_title">
+   <h1>Add User</h1>
+  </div>
   <div class = "form_container">
       <div class = "add_form">
         {{form.Firstname.label}} </br> {{form.Firstname(class = "form-control", size = 75 )}}</br>
