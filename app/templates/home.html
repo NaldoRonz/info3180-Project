@@ -2,7 +2,6 @@
 
 {% block main %}
 <form  action = "" class = add_Profile(form) enctype="multipart/form-data" method = "POST">
-  {% include 'flash_msg.html' %}
   {{form.csrf_token}}
   <div class = "form_container">
       <div class = "add_form">
