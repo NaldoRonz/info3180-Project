@@ -155,6 +155,10 @@ form{
   width: 75%;
   display: flex;
   flex-direction: row;
+  border-top: solid;
+  border-color: #4169E1; /*Royal Blue*/
+  border-width: 5px;
+  border-radius: 10px;
 }
 
 

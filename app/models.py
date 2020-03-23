@@ -10,7 +10,7 @@ class my_users(my_db.Model):
 	lastname = my_db.Column(my_db.String(20),nullable=False)
 	gender = my_db.Column(my_db.String(10),nullable=False)
 	email = my_db.Column(my_db.String(35),nullable=False, unique=True)
-	location = my_db.Column(my_db.String(200),nullable=False)
+	location = my_db.Column(my_db.String(50),nullable=False)
 	biography = my_db.Column(my_db.String(1000),nullable=False)
 	filename = my_db.Column(my_db.String(20),nullable=False)
 
