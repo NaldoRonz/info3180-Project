@@ -20,8 +20,13 @@ from app.models import my_users
 
 # Renders form as home directory.
 
-@app.route('/', methods = ["GET", "POST"])
+@app.route('/')
 def home():
+    return render_template('home.html')
+
+
+@app.route('/profile', methods = ["GET", "POST"])
+def profile():
     form = add_Profile()
     if request.method == "POST" and form.validate_on_submit():
         Firstname = form.Firstname.data
@@ -41,7 +46,7 @@ def home():
 
     else:
         flash_errors(form)
-        return render_template('home.html', form = form)
+        return render_template('profile.html', form = form)
 
 
 @app.route('/profiles')
@@ -50,12 +55,10 @@ def profiles():
     return render_template("profiles_user.html", users = users)
 
 
-@app.route('/profile')
-def profile():
-#@app.route('/profile/<user_id>')
-#def profile(user_id):    
-    profile_user = my_users.query.filter_by(user_id = "1")
-    return render_template('profile.html', profile_user = profile_user)
+@app.route('/profile_data/<user_id>')
+def profile_data(user_id):    
+    profile_user = my_users.query.filter_by(user_id = user_id)
+    return render_template('profile_disp.html', profile_user = profile_user)
 
 
 def flash_errors(form):
