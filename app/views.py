@@ -33,7 +33,8 @@ def home():
         Photo = form.Photo.data 
         filename = secure_filename(Photo.filename)
         Photo.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
-        user = my_users(request.form["Firstname"], request.form["Lastname"], request.form["Gender"], request.form["Email"], request.form["Location"], request.form["Biography"], filename)
+        Date = getDate()
+        user = my_users(request.form["Firstname"], request.form["Lastname"], request.form["Gender"], request.form["Email"], request.form["Location"], request.form["Biography"], filename, Date)
         my_db.session.add(user)
         my_db.session.commit()            
         return render_template('result.html', form = form, Firstname = Firstname, Lastname = Lastname, Gender = Gender, Email = Email, Location = Location, Biography = Biography)
@@ -51,8 +52,10 @@ def profiles():
 
 @app.route('/profile')
 def profile():
-    user = my_users.query.filter_by(email = "@gmail.com")
-    return render_template('profile.html', user = user)
+#@app.route('/profile/<user_id>')
+#def profile(user_id):    
+    profile_user = my_users.query.filter_by(user_id = "1")
+    return render_template('profile.html', profile_user = profile_user)
 
 
 def flash_errors(form):
@@ -69,24 +72,6 @@ def about():
     """Render the website's about page."""
     return render_template('about.html', name="Lord Reginald")
 
-
-###
-# The functions below should be applicable to all Flask apps.
-###
-
-#@app.route('/profiles')
-#def profiles():
-#    my_name = 'Lord Reginald'
-#    email = 'lord_reginald@gmail.com'
-#    res = 'Portland, Jamaica'
-#    story = 'One day I hope to achieve both small and great things such as a stable financial income and to a further extent provide perfor real estate investments in order to improve Jamaica welbeing in the long run'
-#    Post = 'Post'
-#    Following = 'Following'
-#    Followers = 'Followers'
-#    Post_num = '21'
-#    Followers_num = '210'
-#    Following_num = '21'
-#    return render_template('profile.html', my_name = my_name, email = email, res =res, story = story, getDate = getDate(), Post_num = Post_num, Following_num = Following_num, Followers_num = Followers_num, Post = Post, Followers = Followers, Following = Following)
 
 @app.route('/<file_name>.txt')
 def send_text_file(file_name):
@@ -112,7 +97,7 @@ def page_not_found(error):
     return render_template('404.html'), 404
 
 def getDate():
-    today = date.today().strftime('%m/%Y')
+    today = date.today().strftime('%B/%w/%Y')
     return today
 
 if __name__ == '__main__':

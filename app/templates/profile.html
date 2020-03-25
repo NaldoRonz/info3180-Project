@@ -1,12 +1,53 @@
+
 {% extends "base.html" %}
-
 {% block main %}
-
-{% if users %}
-{% for my_users in user%}
-{% endfor %}
-{% else %}
-{% endif %}
+<div class = upperContainer>
+	{% if profile_user %}
+    {% for my_users in profile_user %}
+    <div class = "mainviewContainer">
+    	<div class = "viewBoxUser">
+         <div class = "viewBoxUser1">
+           <div class = viewBoxUser2>
+             <img src ="{{url_for('static', filename ='uploads/' + my_users.filename)}}" class = "profile_user_pic">
+           </div>
+           <div class = "viewBoxUser3">
+           	<div class = dataBox>
+             <strong>{{my_users.firstname}} {{my_users.lastname}}</strong>
+            </div>
+           	<div class = dataBox1>
+            	<img src = "/static/email.png" class = user_img></a> {{my_users.email}}
+            </div>
+            <div class = dataBox2>
+            	<img src = "/static/location.png" class = location_img></a> {{my_users.location}}
+            </div>
+            <div class = dataBox3>
+            	<p> <img src = "/static/calendar.png" class = calendar_img></a> Joined on {{my_users.date_created}}</p>
+            </div>
+           </div>
+          </div>
+          <div class = aboutViewBoxUser>
+          	<div class = aboutViewBoxUser1>
+              <div class = subAboutViewBox1>
+                <strong><p> About Me <p></strong>
+              </div>
+              <div class = subAboutViewBox2>
+                <p>{{my_users.biography}}</p>
+              </div>
+            </div>
+            <div class = aboutViewBoxUser2>
+              <div class = btnBox1>
+             	  <a class = "btn btn-primary" href = "{{url_for('profile', user_id = my_users.user_id)}}">Send Message</a>
+              </div> 
+              <div class = btnBox2>
+                <a class = "btn btn-success" href = "{{url_for('profile', user_id = my_users.user_id)}}">Follow</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>There are currently no users</p>
+    {% endif %}
+</div>
 {% endblock %}
-
- 

@@ -52,6 +52,17 @@
   height: auto;
 }
 
+.email_img{
+  width: 12px;
+  height: auto;
+}
+
+.calendar_img{
+  width: 12px;
+  height: auto;
+}
+
+
 a:hover{
   color: #FFD700; /*Gold*/
 }
@@ -65,22 +76,19 @@ a:hover{
 /*Navbar CSS above*/
 
 main{
-  background-color: #F5FFFA;
+  background-color: #F5F5F5; /*White Smoke*/
 }
 
 .form_container{
   height: auto;
-  width: 70%;
-  border: solid;
-  border-radius: 25px;
-  border-color: #B0E0E6;
-  background-color: #B0E0E6;
+  width: 65%;
+  background-color: #87CEFA; /*Light Sky Blue*/
   padding-left: 10%;
   padding-top: 20px;
 }
 
 .add_form{
-  height: auto;
+  height: 800px;
   width: 85%;
   font-size: 18px;
   margin-bottom: 20px;
@@ -89,58 +97,13 @@ main{
 
 body {
     padding-top: 5rem;
-    background-color: #F5FFFA;
+    background-color: #F5F5F5; /*White Smoke*/
 }
 
 form{
     padding-left: 25%; 
 }
 
-.upperContainerUsers{
-  background-color: #F5FFFA;
-  height: auto;
-  width: auto;
-  padding-left: 20%;
-}
-
-.upperContainer{
-  background-color: #F5FFFA;
-  height: 301px;
-  width: auto;
-  padding-left: 20%;
-}
-
-.lowerContainer{
-  background-color: #F5FFFA;
-  height: 501px;
-  width: auto;
-  padding-left: 20%;
-}
-
-.viewBox1{
-  background-color: #191970;
-  height: 300px;
-  width: 50%;
-  border: 2px;
-  border-style: solid;
-  border-color: blue;
-}
-
-.viewBox2{
-  background-color: #9370DB;
-  height: 100px;
-  width: 50%;
-  border: .5px;
-}
-
-.viewBox21{  /*Post, Follwers and Following super class*/
-  background-color: #9370DB;
-  height: 200px;
-  width: 50%;
-  color: #191970;
-  padding-top: 2.5%;
-
-}
 
 .viewBox22{
   background-color: #9370DB;
@@ -148,9 +111,64 @@ form{
   width: 50%;
 }
 
-/*Main container for profile users*/
+
+/*Main container for user profiles(single)*/
+.upperContainerUsers{
+  background-color: #F5F5F5; /*White Smoke*/
+  height: auto;
+  width: auto;
+  padding-left: 20%;
+}
+
+/*container for profile users(single)*/
+.mainviewContainer{
+  height: 1000px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+}
+
+
+.viewBoxUser{
+  height: 300px;
+  width: 40%;
+  background-color: #B0C4DE; /*Light Steel Blue*/;
+  border-top: solid;
+  border-color: #4169E1; /*Royal Blue*/
+  border-width: 7px;
+  border-radius: 10px;
+}
+
+
+/*Box for profile user(single)*/
+.viewBoxUser1{
+  display: flex;
+  flex-direction: row;
+  height: 150px;
+  width: 100%;
+}
+
+
+/*Box for profile user(single image)*/
+.viewBoxUser2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 50%;
+}
+
+/*Box for profile user(single: data)*/
+.viewBoxUser3{
+  height: 150px;
+  width: 50%;
+  padding-top: 7%;
+  padding-left: 2%;
+}
+
+/*Box for profile users(multiple) */
 .viewBoxUsers{
-  background-color: #B0E0E6 /*Powder Blue*/;
+  background-color: #B0C4DE /*Light Steel Blue*/;
   height: 120px;
   width: 75%;
   display: flex;
@@ -161,7 +179,7 @@ form{
   border-radius: 10px;
 }
 
-
+/*Boxes for profile users below*/
 .viewBoxUsers2{
   display: flex;
   height: 120px;
@@ -187,6 +205,45 @@ form{
 }
 
 
+.aboutViewBoxUser{
+  height: 150px;
+  width: 100%;
+}
+
+
+.aboutViewBoxUser1{
+  height: 100px;
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+
+
+.subAboutViewBox1{
+ font-size: 13px;
+  height: 20px;
+  width: 100%;
+}
+
+.subAboutViewBox2{
+  font-size: 11px;
+  height: 80px;
+  width: 100%;
+}
+
+
+.aboutViewBoxUser2{
+  display: flex;
+  height: 50px;
+  width: 100%;
+  padding-left: 20%;
+  padding-right: 4%;
+  flex-direction: row;
+}
+
+
 .nameBoxUsers{
   height: 30px;
   width: 150px;
@@ -196,77 +253,83 @@ form{
 .nameBoxUsers2{
   height: 30px;
   width: 150px;
-  color: #4169E1; /*Royal Blue*/
+  font-size: 13px;
 }
 
 
 .nameBoxUsers3{
   height: 30px;
   width: 150px;
-  color: #4169E1; /*Royal Blue*/
+  font-size: 13px;
 }
 
 
- h1.name{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-  padding-top: 2%;
-  text-align: center;
-  color: #F5FFFA;
- }
-
- p.info{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  color: white;
-  padding-top: 2%;
-  margin-right: 10%;
-  margin-left: 10%;
-  color: #191970;
- }
-
-.profile_img{
-  display: block;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 125px;
-  width: 125px;
-  justify-content: center;
-  border-radius: 50%;
+.dataBox{
+  height: 30px;
+  width: 100%;
+  font-size: 17px;
 }
 
-h2{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  text-align: center;
-  color: #F5FFFA;
+
+.dataBox1{
+  height: 30px;
+  width: 100%;
+  font-size: 12px;
 }
 
-.button{
-  background-color: #FFD700;
-  color: #DAA520;
-  font-weight: bold;
-  border-color: #DAA520;
-  padding: 5px 10px;
-  text-align: center;
-  font-size: 15px;
-  margin-left: 80%;
-  margin-top: 5%;
+.dataBox2{
+  height: 30px;
+  width: 100%;
+  font-size: 12px;
 }
 
-table,th,td{
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 10px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  text-align: center;
+.dataBox3{
+  height: 30px;
+  width: 100%;
+  font-size: 12px;
 }
 
+
+/*container for buttons in user(single) profile*/
+.btnBox1{
+  height: 50px;
+  width:50%;
+}
+
+.btnBox2{
+  height: 50px;
+  width:50%;
+}
+/*Box for profile users above*/
+
+/*Profile user image */
 .profile_user_pic{
   height: 100px;
   width: 100px;
   border-radius: 50%;
+}
+
+.btn-primary{
+  font-size: 13px;
+  border-radius: 10px;
+  width: 65%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn-success{
+  font-size: 13px;
+  border-radius: 10px;
+  width: 65%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.form_button{
+  font-size: 13px;
+  width: 30%;
+  background-color: #1a53ff; /*Blue*/
+  border: none;
+  padding: 8px 20px;
+  border-radius: 10px;
 }

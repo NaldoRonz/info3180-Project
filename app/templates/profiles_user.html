@@ -14,14 +14,14 @@
           <p><strong>{{my_users.firstname}} {{my_users.lastname}}</strong></p>
         </div>
         <div class = "nameBoxUsers2">
-          <p><img src = "/static/user.png" class = user_img></a> <strong>{{my_users.gender}}</strong></p>
+          <p><img src = "/static/user.png" class = user_img></a> {{my_users.gender}}</p>
         </div>
         <div class = "nameBoxUsers3">
-          <p><img src = "/static/location.png" class = location_img></a> <strong>{{my_users.location}}</strong></p>
+          <p><img src = "/static/location.png" class = location_img></a> {{my_users.location}}</p>
         </div>
       </div>
       <div class = "viewBoxUsers4">
-        <a class = "btn btn-primary" href = "{{url_for('profile')}}">View Profile</a>
+        <a class = "btn btn-primary" href = "{{url_for('profile', user_id = my_users.user_id)}}">View Profile</a>
       </div>
     </div>
   </br>
