@@ -82,7 +82,11 @@ main{
 .form_container{
   height: auto;
   width: 65%;
-  background-color: #87CEFA; /*Light Sky Blue*/
+  background-color: #B0C4DE; /*Light Steel Blue*/
+  border-top: solid;
+  border-color: #4169E1; /*Royal Blue*/
+  border-width: 7px;
+  border-radius: 15px;
   padding-left: 10%;
   padding-top: 20px;
 }
@@ -102,13 +106,6 @@ body {
 
 form{
     padding-left: 25%; 
-}
-
-
-.viewBox22{
-  background-color: #9370DB;
-  height: 100px;
-  width: 50%;
 }
 
 
@@ -132,7 +129,7 @@ form{
 .viewBoxUser{
   height: 300px;
   width: 40%;
-  background-color: #B0C4DE; /*Light Steel Blue*/;
+  background-color: #B0C4DE; /*Light Steel Blue*/
   border-top: solid;
   border-color: #4169E1; /*Royal Blue*/
   border-width: 7px;
