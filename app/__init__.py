@@ -11,7 +11,7 @@ app = Flask(__name__)
 app.config["SECRET_KEY"] = "9_!Nald&$K8Y{i5*_H3r3}4618542184$@qlShu)_Un3<2gGu57"
 
 # Runs on port 5432 only works with default server postgres
-app.config["SQLALCHEMY_DATABASE_URI"] = 'postgres://qbbwwdoxsiewkd:3d0631d1b529d65069b2d83bf21537450575278d9dcaaef842f7bab8614c60b7@ec2-52-73-247-67.compute-1.amazonaws.com:5432/d4rd2mifotbgj0'
+app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://qbbwwdoxsiewkd:3d0631d1b529d65069b2d83bf21537450575278d9dcaaef842f7bab8614c60b7@ec2-52-73-247-67.compute-1.amazonaws.com:5432/d4rd2mifotbgj0'
 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
