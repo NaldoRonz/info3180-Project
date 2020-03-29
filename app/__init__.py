@@ -12,7 +12,7 @@ app.config["SECRET_KEY"] = "9_!Nald&$K8Y{i5*_H3r3}4618542184$@qlShu)_Un3<2gGu57"
 
 # Runs on port 5432 only works with default server postgres
 #app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:RSK4LFEg@localhost/postgres"
-app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://yhynupqxaycxdf:208801bd5e9f2ef676e10bfc13c78bd6eedc092bfe1199193a9cfe8383022116@ec2-35-172-85-250.compute-1.amazonaws.com:5432/d7pjjh6m5jidpe'
+app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://ndxofyornrbxaj:040f57d0a135abe01ccf2eb608682da4364309979a2a1896ccf0228a845c767a@ec2-52-87-58-157.compute-1.amazonaws.com:5432/dogsv2e87av5k'
 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
