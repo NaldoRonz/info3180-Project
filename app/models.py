@@ -33,14 +33,14 @@ my_db.create_all()
 
 #class my_followers(my_db.Model):
 
-#    _tablename_ = "followers"
-#    follower_id = my_db.Column(my_db.Integer, primary_key=True)
-#    follower_fname = my_db.Column(my_db.String(20), nullable=False)
-#    follower_lname = my_db.Column(my_db.String(20), nullable=False)
+    #_tablename_ = "followers"
+    #follower_id = my_db.Column(my_db.Integer, primary_key=True)
+    #follower_fname = my_db.Column(my_db.String(20), nullable=False)
+    #follower_lname = my_db.Column(my_db.String(20), nullable=False)
 
-#    def__init__(self,follower_fname,follower_lname):
-#        self.follower_fname = follower_fname
-#        self.follower_lname = follower_lname
+    #def__init__(self,follower_fname,follower_lname):
+    #    self.follower_fname = follower_fname
+    #    self.follower_lname = follower_lname
 
-#    def __repr__(self):
-#        return f"followes('{self.follower_fname}','{self.follower_lname}')"
+    #def __repr__(self):
+    #    return f"followes('{self.follower_fname}','{self.follower_lname}')"
