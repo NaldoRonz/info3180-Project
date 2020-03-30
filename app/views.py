@@ -100,7 +100,7 @@ def page_not_found(error):
     return render_template('404.html'), 404
 
 def getDate():
-    today = date.today().strftime('%B/%w/%Y')
+    today = date.today().strftime('%B/%d/%Y')
     return today
 
 if __name__ == '__main__':
