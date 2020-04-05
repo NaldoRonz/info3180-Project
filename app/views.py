@@ -41,7 +41,8 @@ def profile():
         Date = getDate()
         user = my_users(request.form["Firstname"], request.form["Lastname"], request.form["Gender"], request.form["Email"], request.form["Location"], request.form["Biography"], filename, Date)
         my_db.session.add(user)
-        my_db.session.commit()            
+        my_db.session.commit()
+        flash("New user added")            
         return render_template('result.html', form = form, Firstname = Firstname, Lastname = Lastname, Gender = Gender, Email = Email, Location = Location, Biography = Biography)
 
     else:
@@ -55,7 +56,7 @@ def profiles():
     return render_template("profiles_user.html", users = users)
 
 
-@app.route('/profile_data/<user_id>')
+@app.route('/profile/<user_id>')
 def profile_data(user_id):    
     profile_user = my_users.query.filter_by(user_id = user_id)
     return render_template('profile_disp.html', profile_user = profile_user)
